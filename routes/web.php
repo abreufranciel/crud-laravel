@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
-
-Route::get('/posts/update/{id}', [PostController::class, 'update'])->name('posts.update');
+Route::any('/posts/search', [PostController::class, 'search'])->name('posts.search');
+Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('posts.edit');
 Route::delete('/posts/{id}', [PostController::class, 'delete'])->name('posts.delete');
 Route::get('/posts/create',[PostController::class,'create'])->name('posts.create');
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
